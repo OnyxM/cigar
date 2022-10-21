@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AppController;
+use App\Http\Controllers\PaypalPaymentController;
 use Illuminate\Support\Facades\Route;
 
 /*

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -141,5 +141,6 @@
 </footer>
 
 <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" ></script>
+@yield('js')
 </body>
 </html>
