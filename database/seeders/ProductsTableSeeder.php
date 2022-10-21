@@ -21,7 +21,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => "Light agata cigar",
                 'slug' => Str::slug("Light agata cigar"),
                 'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. At, accusantium illum deleniti blanditiis eligendi odit optio. Quasi esse enim, quos illum debitis cumque labore assumenda vitae nesciunt nisi voluptas vero!",
-                'price' => "25"
+                'price' => "0.5"
             ],
         ];
 

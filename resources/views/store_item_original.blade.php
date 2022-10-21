@@ -49,8 +49,10 @@
                     <p class="lead fw-bold">${{ $product->price }}</p>
                     <hr>
                     <p>{!! $product->description !!}</p>
-                    <div id="paypal-button-container"></div>
+                    <button class="btn-cigar text-decoration-none" type="">Buy Now</button>
                 </div>
+
+
             </div>
         </div>
 
@@ -104,34 +106,4 @@
             </div>
         </div>
     </section>
-@endsection
-
-
-@section("js")
-    <script src="https://www.paypal.com/sdk/js?client-id=AdGSVd7ztMkYsXA5EhVe7bh8oJ2q8Sa0abGmyritI-0stEmJQyDAHpb0wCuecvV61bwggobsdR0NJvaN&currency=USD"></script>
-
-    <script>
-        // Render the PayPal button into #paypal-button-container
-        paypal.Buttons({
-            style: {
-                layout: 'horizontal'
-            },
-            // Call your server to set up the transaction
-            createOrder: function(data, actions) {
-                return fetch("{{route('paypal.create_order')}}", {
-                    method: 'POST',
-                    body:JSON.stringify({
-                        'product_id': "{{$product->id}}",
-                        'user_id' : "1",
-                        'amount' : {{$product->price}},
-                    })
-                }).then(function(res) {
-                    return res.json();
-                }).then(function(orderData) {
-                    return orderData.id;
-                });
-            }
-
-        }).render('#paypal-button-container');
-    </script>
 @endsection
