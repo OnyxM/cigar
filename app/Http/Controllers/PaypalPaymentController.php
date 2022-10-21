@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Srmklive\PayPal\Facades\PayPal;
 use Srmklive\PayPal\Traits\PayPalAPI;
@@ -85,6 +86,8 @@ class PaypalPaymentController extends Controller
                 $order->status = "COMPLETED";
                 $order->save();
                 DB::commit();
+            }else{
+                Log::info(json_encode($result));
             }
         } catch (Exception $e) {
             DB::rollBack();
