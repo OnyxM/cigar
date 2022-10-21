@@ -107,7 +107,7 @@
 @endsection
 
 @section("js")
-    <script src="https://www.paypal.com/sdk/js?client-id={{config('paypal.sandbox.client_id')}}&currency=USD"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id={{config('paypal.live.client_id')}}&currency=USD"></script>
 
     <script>
         // Render the PayPal button into #paypal-button-container
