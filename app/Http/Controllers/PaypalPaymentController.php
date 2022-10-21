@@ -86,9 +86,8 @@ class PaypalPaymentController extends Controller
                 $order->status = "COMPLETED";
                 $order->save();
                 DB::commit();
-            }else{
-                Log::info(json_encode($result));
             }
+            Log::info(json_encode($result));
         } catch (Exception $e) {
             DB::rollBack();
             dd($e);
