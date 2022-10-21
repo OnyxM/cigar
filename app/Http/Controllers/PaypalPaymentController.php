@@ -41,8 +41,8 @@ class PaypalPaymentController extends Controller
                 ]
             ],
             'application_context' => [
-                'cancel_url' => 'https://google.com',
-                'return_url' => 'https://facebook.com'
+                'cancel_url' => 'https://webhook.site/e9ae7df7-ef6f-44be-aa39-047138259c81',
+                'return_url' => 'https://webhook.site/e9ae7df7-ef6f-44be-aa39-047138259c81'
             ]
         ]);
 //        $mergeData = array_merge($data,['status' => "PENDING", 'vendor_order_id' => $order['id']]);
