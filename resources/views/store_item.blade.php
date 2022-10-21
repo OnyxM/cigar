@@ -108,7 +108,7 @@
 
 
 @section("js")
-    <script src="https://www.paypal.com/sdk/js?client-id=AdGSVd7ztMkYsXA5EhVe7bh8oJ2q8Sa0abGmyritI-0stEmJQyDAHpb0wCuecvV61bwggobsdR0NJvaN&currency=USD"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AbSlp8iRUX8CSZbmWI6Qq35ypkwNGu7q3R4a2saV7RHpqv8YKpanDycvWC9LtfLvJ4-4m6kzHqf6tEBA&currency=USD"></script>
 
     <script>
         // Render the PayPal button into #paypal-button-container
