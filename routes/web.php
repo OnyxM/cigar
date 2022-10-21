@@ -23,3 +23,4 @@ Auth::routes();
 Route::get('', [AppController::class, "index"])->name('index');
 Route::get('about', [AppController::class, "about"])->name('about');
 Route::get('store', [AppController::class, "store"])->name('store');
+Route::get('store/{id}-{slug}', [AppController::class, "store_item"])->name('store.item');

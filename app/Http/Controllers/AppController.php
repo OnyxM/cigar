@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class AppController extends Controller
@@ -27,9 +28,21 @@ class AppController extends Controller
     public function store()
     {
         $data = [
-            'title' => "Store | "
+            'title' => "Store | ",
+            'products' => Product::orderBy('id', "desc")->simplePaginate(15),
         ];
 
         return view("store", $data);
+    }
+
+    public function store_item($id, $slug)
+    {
+        $data = [
+            'title' => "Product Details | ",
+            'product' => Product::findOrFail($id),
+            'other_products' => Product::where('id', '!=', $id)->orderBy('id', "desc")->simplePaginate(4)
+        ];
+
+        return view("store_item", $data);
     }
 }

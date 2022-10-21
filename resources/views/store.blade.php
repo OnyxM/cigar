@@ -16,46 +16,18 @@
     <section class="py-3 mb-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
-                    <div class="card mb-3">
-                        <img src="./assets/img/cigars-image-1024x744.png" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="fw-bold text-gold-1">Light agata cigar</h5>
-                            <p class="fw-bold">$25</p>
-                            <a href="product_details.html" class="btn-cigar text-decoration-none">Buy now</a>
+                @foreach($products as $p)
+                    <div class="col-md-3">
+                        <div class="card mb-3">
+                            <img src="{{ $p->image }}" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="fw-bold text-gold-1">{{ $p->name }}</h5>
+                                <p class="fw-bold">${{$p->price}}</p>
+                                <a href="{{ route('store.item', ['id' => $p->id, 'slug' => $p->slug]) }}" class="btn-cigar text-decoration-none">Buy now</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card mb-3">
-                        <img src="./assets/img/cigars-image-1024x744.png" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="fw-bold text-gold-1">Light agata cigar</h5>
-                            <p class="fw-bold">$25</p>
-                            <a href="product_details.html" class="btn-cigar text-decoration-none">Buy now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card mb-3">
-                        <img src="./assets/img/cigars-image-1024x744.png" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="fw-bold text-gold-1">Light agata cigar</h5>
-                            <p class="fw-bold">$25</p>
-                            <a href="product_details.html" class="btn-cigar text-decoration-none">Buy now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card mb-3">
-                        <img src="./assets/img/cigars-image-1024x744.png" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="fw-bold text-gold-1">Light agata cigar</h5>
-                            <p class="fw-bold">$25</p>
-                            <a href="product_details.html" class="btn-cigar text-decoration-none">Buy now</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
 
