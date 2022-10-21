@@ -37,7 +37,7 @@ class PaypalPaymentController extends Controller
                         "currency_code"=> "USD",
                         "value"=> $data['amount']
                     ],
-                    'description' => 'test'
+                    'description' => 'Test Cigar App'
                 ]
             ],
             'application_context' => [
@@ -45,6 +45,7 @@ class PaypalPaymentController extends Controller
                 'return_url' => 'https://webhook.site/e9ae7df7-ef6f-44be-aa39-047138259c81'
             ]
         ]);
+
 //        $mergeData = array_merge($data,['status' => "PENDING", 'vendor_order_id' => $order['id']]);
         DB::beginTransaction();
         Transactions::create([
