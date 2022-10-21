@@ -58,6 +58,7 @@
 
     </section>
 
+    @if($other_products->count() > 0)
     <section class="py-3 mb-5">
         <div class="container">
             <hr>
@@ -83,7 +84,7 @@
         </div>
 
     </section>
-
+    @endif
 
     <section class="pt-3 bg-primary-cigar text-white" style="padding-bottom:10rem;" >
         <div class="container">
