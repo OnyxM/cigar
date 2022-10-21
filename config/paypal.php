@@ -5,7 +5,7 @@
  */
 
 return [
-    'mode'    => "live", // Can only be 'sandbox' Or 'live'. If empty or invalid, 'live' will be used.
+    'mode'    => "sandbox", // Can only be 'sandbox' Or 'live'. If empty or invalid, 'live' will be used.
     'sandbox' => [
         'client_id'         => "AdGSVd7ztMkYsXA5EhVe7bh8oJ2q8Sa0abGmyritI-0stEmJQyDAHpb0wCuecvV61bwggobsdR0NJvaN",
         'client_secret'     => "EBesO93gb4mfkMTSnukmZThkzjTCRUQnVRBCu8RLDgfliJC3TblpP4P86l9AVS8sK65QG2Az0JU-h9Zb",
