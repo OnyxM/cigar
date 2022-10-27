@@ -37,7 +37,7 @@ class PaypalPaymentController extends Controller
                         "currency_code"=> "USD",
                         "value"=> $data['amount']
                     ],
-                    'description' => 'Test Cigar App'
+                    'description' => 'Cigar App'
                 ]
             ],
             'application_context' => [
@@ -64,8 +64,8 @@ class PaypalPaymentController extends Controller
 
     public function capture(Request $request)
     {
-        $data = json_decode($request->getContent(), true);
-        $orderId = $data['orderId'];
+        // $data = json_decode($request->getContent(), true);
+        $orderId = $request->id;
         $this->provider->setApiCredentials(config('paypal'));
         $token = $this->provider->getAccessToken();
         $this->provider->setAccessToken($token);
@@ -74,7 +74,7 @@ class PaypalPaymentController extends Controller
 //            $result = $result->purchase_units[0]->payments->captures[0];
         try {
             DB::beginTransaction();
-            if($result['status'] === "COMPLETED"){
+//            if($result['status'] === "COMPLETED"){
                 $order = Transactions::where('tracking_code', $orderId)->first();
 //                $transaction = new Transaction;
 //                $transaction->vendor_payment_id = $orderId;
@@ -84,15 +84,20 @@ class PaypalPaymentController extends Controller
 //                $transaction->save();
 //                $order = Order::where('vendor_order_id', $orderId)->first();
 //                $order->transaction_id = $transaction->id;
-                $order->status = "COMPLETED";
+                $order->status = "SUCCESS";
+                $order->infos = json_encode($request->all());
                 $order->save();
                 DB::commit();
-            }
+//            }
             Log::info(json_encode($result));
         } catch (Exception $e) {
             DB::rollBack();
             dd($e);
         }
-        return response()->json($result);
+        
+        return response()->json([
+            'message' => "Order Completed. Contact Admin with code $orderId."
+        ]);
+        // return response()->json($result);
     }
 }

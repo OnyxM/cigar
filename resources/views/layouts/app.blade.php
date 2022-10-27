@@ -139,7 +139,7 @@
     </div>
 
 </footer>
-
+<script src="{{ asset('assets/js/jquery.min.js') }}" ></script>
 <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" ></script>
 @yield('js')
 </body>

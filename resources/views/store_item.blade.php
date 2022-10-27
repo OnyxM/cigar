@@ -129,6 +129,23 @@
                 }).then(function(orderData) {
                     return orderData.id;
                 });
+            },
+            
+            onApprove: (data, actions) => {
+                return actions.order.capture().then(function(orderData) {
+                    const transaction = orderData.purchase_units[0].payments.captures[0];
+                    
+                    $.ajax({
+                        url: "{{route('paypal.capture_order')}}",
+                        type: "POST",
+                        data: orderData,
+                        dataType: "json",
+                        success: function(response) {
+                            $("#paypal-button-container").html(response.message);
+                            $("#paypal-button-container").addClass("text-center text-bg-success");
+                        }
+                    });
+                });
             }
 
         }).render('#paypal-button-container');

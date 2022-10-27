@@ -12,8 +12,8 @@ return [
 //        'app_id'            => 'APP-80W284485P519543T',
     ],
     'live' => [
-        'client_id'         => "AbSlp8iRUX8CSZbmWI6Qq35ypkwNGu7q3R4a2saV7RHpqv8YKpanDycvWC9LtfLvJ4-4m6kzHqf6tEBA",
-        'client_secret'     => "EPzMYzrfMiao8TBkXSutXcLBy7D7QS9qNTADHzlAR6NrjrT0-oy9Sl2bfPYjZJdYL4LNqNH9c6rp1t3s",
+        'client_id'         => "AU2CtMDlPOyxJ0ATWv58bNWcuYt29Y-DmVc_VqGpkZs_FG6fqrHEEYLR3wLXfe051brebvmqCsqF9ES5",
+        'client_secret'     => "EKt3iIIsUPOyPzpRzPtTdGuepq6jEnW4prP1ZAPNCLl_d5KtqGo90qEEQnZ-gO3UxqcS9YRh-trR9TWn",
 //        'app_id'            => 'APP-80W284485P519543T',
     ],
 
